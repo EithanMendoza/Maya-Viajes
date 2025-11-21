@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+.input {
+  @apply w-full p-2 bg-gray-700 rounded text-white;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-500 text-white py-2 rounded;
+}
+
+@layer utilities {
+  /* Define la animación de giro normal */
+  @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+  }
+  
+  /* Define la animación de giro inverso */
+  @keyframes spin-slow-reverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+  }
+
+  /* Aplica las animaciones con la clase de Tailwind */
+  .animate-spin-slow {
+      animation: spin-slow 20s linear infinite; /* 20 segundos de duración */
+  }
+
+  .animate-spin-slow-reverse {
+      animation: spin-slow-reverse 20s linear infinite; /* 20 segundos de duración, inverso */
+  }
+}
+
+@layer utilities {
+  /* Define la animación de desplazamiento para la marquesina de socios */
+  @keyframes scroll-partners {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); } /* Desplaza hasta la mitad de los logos duplicados */
+  }
+
+  /* Aplica la animación */
+  .animate-scroll-partners {
+      animation: scroll-partners 30s linear infinite; /* 30 segundos de duración, lineal, infinito */
+  }
+}
