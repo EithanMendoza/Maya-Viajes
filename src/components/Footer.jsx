@@ -41,7 +41,7 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/* COLUMNAS 2, 3, 4: Enlaces de Navegación */}
+                    {/* COLUMNAS 2-4: Enlaces de Navegación */}
                     {footerLinks.map((col, colIndex) => (
                         <div key={colIndex} className="col-span-1">
                             <h4 className="text-lg font-semibold mb-4 text-white">{col.title}</h4>
