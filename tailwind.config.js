@@ -1,12 +1,15 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
-    content: [
-      "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx}", 
-    ],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  }
+  content: [ /* ... */ ],
+  theme: {
+      extend: {
+          colors: {
+              // Nombre: 'rojo_principal'
+              'rojo_principal': '#690D11', 
+          },
+      }, // <--- Importante: Cierre de extend
+  }, // <--- Importante: Cierre de theme
+  plugins: [],
+}

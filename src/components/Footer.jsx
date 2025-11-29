@@ -44,7 +44,7 @@ const Footer = () => {
                     {/* COLUMNAS 2, 3, 4: Enlaces de Navegación */}
                     {footerLinks.map((col, colIndex) => (
                         <div key={colIndex} className="col-span-1">
-                            <h4 className="text-lg font-semibold mb-4 text-yellow-400">{col.title}</h4>
+                            <h4 className="text-lg font-semibold mb-4 text-white">{col.title}</h4>
                             <ul className="space-y-2">
                                 {col.links.map((link, linkIndex) => (
                                     <li key={linkIndex}>

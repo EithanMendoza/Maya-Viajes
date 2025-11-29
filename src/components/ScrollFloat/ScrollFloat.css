@@ -1,0 +1,18 @@
+/* ScrollFloat.css */
+.scroll-float {
+    overflow: hidden;
+    /* Importante: para que conviva con otros elementos en línea si es necesario */
+    display: inline-block; 
+    vertical-align: top;
+  }
+  
+  .scroll-float-text {
+    display: inline-block;
+    line-height: 1.5;
+    /* Eliminamos font-size/weight fijos para que hereden de Tailwind */
+  }
+  
+  .char {
+    display: inline-block;
+    transform-style: preserve-3d; /* Mejora renderizado en animaciones 3D */
+  }

@@ -1,7 +1,7 @@
-// postcss.config.js
+// postcss.config.js (Como lo tenías)
 export default {
-    plugins: {
-      '@tailwindcss/postcss': {},
-      autoprefixer: {},
-    },
-  }
+  plugins: {
+    '@tailwindcss/postcss': {}, // 👈 ESTO es correcto si instalas el paquete
+    autoprefixer: {},
+  },
+}
