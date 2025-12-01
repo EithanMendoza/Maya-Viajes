@@ -207,7 +207,7 @@ const StickerPeel = ({
 
   return (
     <div
-      className={`absolute cursor-grab active:cursor-grabbing transform-gpu ${className} border-2 border-dashed border-red-500`}
+      className={`absolute cursor-grab active:cursor-grabbing transform-gpu ${className}`}
       ref={dragTargetRef}
       style={cssVars}
     >

@@ -5,6 +5,7 @@ import { FiCheckCircle } from 'react-icons/fi';
 
 // Componente Auxiliar para los ítems de la lista
 const FeatureItem = ({ text, isHighlighted = false }) => (
+    // La fuente se hereda del padre, pero la clase text-base se queda aquí.
     <div className={`flex items-start mb-3 ${isHighlighted ? 'text-white' : 'text-gray-700'}`}>
         <FiCheckCircle className={`w-5 h-5 shrink-0 mr-2 ${isHighlighted ? 'text-yellow-400' : 'text-red-600'}`} />
         <span className={`${isHighlighted ? 'text-gray-200' : 'text-gray-700'} text-base`}>
@@ -15,8 +16,8 @@ const FeatureItem = ({ text, isHighlighted = false }) => (
 
 const PlanSelectionSection = () => {
     return (
-        // Contenedor principal: Fondo blanco, centrado y con padding vertical
-        <div className="bg-white py-20 relative w-full">
+        // CONTENEDOR PRINCIPAL: Aplicamos font-lato para que todos los hijos la hereden
+        <div className="min-h-screen w-full bg-white py-20 relative font-lato"> 
             
             {/* Contenido principal: Contenedor centrado y limitado (max-w-7xl) */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
@@ -53,6 +54,7 @@ const PlanSelectionSection = () => {
                                 <FeatureItem text="Estimación de costo aproximado, sin compromiso." />
                             </div>
                         </div>
+                        {/* Botón 1 */}
                         <button className="mt-8 border border-red-600 text-red-600 hover:bg-red-50 py-3 rounded-lg font-semibold transition duration-300">
                             Agendar llamada
                         </button>
@@ -74,6 +76,7 @@ const PlanSelectionSection = () => {
                                 <FeatureItem text="Itinerario detallado y personalizado día por día" isHighlighted={true} />
                             </div>
                         </div>
+                        {/* Botón 2 */}
                         <button className="mt-8 bg-red-600 hover:bg-red-700 text-white py-4 rounded-lg font-bold text-lg transition duration-300 shadow-md">
                             Seleccionar
                         </button>
@@ -94,6 +97,7 @@ const PlanSelectionSection = () => {
                                 <FeatureItem text="Acceso a experiencias exclusivas (cenas, ceremonias)." />
                             </div>
                         </div>
+                        {/* Botón 3 */}
                         <button className="mt-8 border border-gray-400 text-gray-600 hover:bg-gray-50 py-3 rounded-lg font-semibold transition duration-300">
                             Seleccionar
                         </button>

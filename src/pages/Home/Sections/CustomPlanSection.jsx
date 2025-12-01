@@ -33,10 +33,11 @@ const CustomPlansSection = () => {
         // Contenedor principal: Fondo blanco, centrado y con padding vertical
         <div className="bg-white py-20 relative overflow-hidden w-full">
             
-            {/* Patrón de líneas grises/blancas sutiles en el fondo */}
+            {/* Patrón de líneas grises/blancas sutiles en el fondo 
             <div className="absolute inset-0 w-full h-full opacity-50 z-0 pointer-events-none">
                 <img src={BACKGROUND} alt="Background Pattern" className="w-full h-full object-cover" />
-            </div>
+            </div>*/}
+            
             {/* Contenido principal: Contenedor centrado y limitado (max-w-7xl) */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
                 

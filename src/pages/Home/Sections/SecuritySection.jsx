@@ -79,7 +79,7 @@ const SecuritySection = () => {
                     </div>
 
                     {/* COLUMNA DERECHA: Ilustración de Seguridad */}
-                    <div className=" border-2 border-dashed border-red-500 w-full h-full flex items-center justify-center order-1 lg:order-2">
+                    <div className="w-full h-full flex items-center justify-center order-1 lg:order-2">
                         <StickerPeel
                             imageSrc={logo}
                             width={400}

@@ -12,6 +12,7 @@
 @theme {
   /*colores*/
   --color-rojo-principal: #690D11; /* 👈 ESTA ES LA SINTAXIS CORRECTA DE V4 */
+  --color-rojo-secundario: #9f0712;
 
   /*fuentes*/
   --font-lato: 'Lato', sans-serif;

@@ -1,16 +1,43 @@
 // src/components/PartnersSection.jsx
 import React from 'react';
 import LogoLoop from '../../../components/LogoLoop';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import ADO from '../../../assets/images/marcas/ado.svg'
+import XCARET from '../../../assets/images/marcas/xcaret.png'
+import AIRBNB from '../../../assets/images/marcas/airbnb.png'
+import HOLIDAY from '../../../assets/images/marcas/holiday-inn.png'
+import ATY from '../../../assets/images/marcas/ATY.svg'
 
 const PartnersSection = () => {
 
     const techLogos = [
-    { node: <SiReact />, title: "React", href: "https://react.dev" },
-    { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
-    { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-    { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-    ];
+        { 
+          node: <img src={ADO} alt="ADO" className="w-40 h-40 object-contain" />, 
+          title: "ADO", 
+          href: "https://www.ado.com.mx/" 
+        },
+        { 
+          node: <img src={XCARET} alt="Hotel Xcaret" className="w-40 h-40 object-contain" />, 
+          title: "Next.js", 
+          href: "https://www.hotelxcaretmexico.com/es/" 
+        },
+        { 
+            node: <img src={AIRBNB} alt="airbnb" className="w-40 h-40 object-contain" />, 
+            title: "React", 
+            href: "https://www.airbnb.mx/" 
+          },
+          { 
+            // Este era rectangular (w-20 h-10), así que lo pasamos a (w-40 h-20)
+            node: <img src={HOLIDAY} alt="Hotel Holiday Inn" className="w-40 h-20 object-contain" />, 
+            title: "Next.js", 
+            href: "https://www.hotelxcaretmexico.com/es/" 
+          },
+          { 
+            node: <img src={ATY} alt="Agencia de Transporte de Yucatán" className="w-20 h-20 object-contain" />, 
+            title: "Next.js", 
+            href: "https://transporteyucatan.org.mx/" 
+          },
+      ];
+
     return (
         // Contenedor principal: Fondo blanco, centrado y con padding vertical
         <div className="bg-white py-20 relative w-full overflow-hidden">

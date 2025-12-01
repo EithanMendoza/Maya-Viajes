@@ -1,46 +1,65 @@
 // src/components/AssuranceCTA.jsx
 import React from 'react';
+// Usaremos la imagen del mockup para ilustrar el itinerario digital
+import MOCKUP from '../../../assets/images/172shots_so.png'; 
+import MagnetButton from '../../../components/MagnetButton'; // Asumiendo que MagnetButton está en la misma carpeta
 
 const AssuranceCTA = () => {
-    // Placeholder para el patrón de círculos concéntricos de fondo
-    // Usamos un color ligeramente más claro que el fondo principal para simular la textura.
-    const CIRCLE_PATTERN_PLACEHOLDER = 'https://via.placeholder.com/800x800/963f45/963f45?text=+'; 
+    
+    const handleClick = () => {
+        console.log("¡Contacto con asesor ejecutado!");
+    };
 
     return (
         // Contenedor principal: Fondo rojo oscuro similar al Hero, padding vertical generoso
-        <div className="bg-red-800 text-white py-24 md:py-32 relative overflow-hidden w-full">
+        <section className="bg-red-800 text-white py-24 md:py-32 relative overflow-hidden w-full">
             
-            {/* Patrón de Círculos Concéntricos Sutiles */}
-            <div 
-                className="absolute inset-0 bg-cover bg-center opacity-20" 
-                // Posicionamiento manual para simular el patrón en la esquina
-                style={{ backgroundImage: `url('${CIRCLE_PATTERN_PLACEHOLDER}')`, backgroundPosition: 'left center' }}
-            ></div>
-
-            {/* Contenido centrado: max-w-5xl es adecuado para un CTA grande */}
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative text-center">
+            {/* Contenido centrado dentro de max-w-7xl */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
                 
-                {/* Título y Subrayado */}
-                <h2 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                    Tu tranquilidad, donde estés
-                    {/* Subrayado amarillo/naranja debajo (simulado con un div absoluto) */}
-                    <div className="relative inline-block">
-                        <span className="sr-only">Subrayado</span>
-                        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-3/4 h-3 bg-yellow-400 opacity-60 z-0 translate-y-2"></div>
+                {/* Estructura de dos columnas: Texto (Izquierda) e Imagen (Derecha) */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    {/* COLUMNA IZQUIERDA: Título y Texto de Venta */}
+                    <div className="space-y-6 lg:pr-16">
+                        
+                        {/* Título de Impacto: Usando font-lato y font-extrabold */}
+                        <h2 className="text-5xl md:text-6xl font-lato font-extrabold leading-tight drop-shadow-md">
+                            Tu tranquilidad, donde estés
+                        </h2>
+                        
+                        {/* Subtexto: Alto contraste y profesional */}
+                        <p className="text-xl max-w-lg font-lato text-gray-200">
+                            Accede a tu itinerario digital 24/7 desde tu móvil. ¿Dudas o imprevistos? Tienes una línea directa con tu agente de viajes personal por WhatsApp o teléfono durante todo tu recorrido.
+                        </p>
+                        
+                        {/* Botón CTA: Usamos el MagnetButton consistente con el resto del proyecto */}
+                        <MagnetButton
+                            onClick={handleClick}
+                            magnetStrength={5}
+                            magnetPadding={100}
+                            className="bg-red-600 hover:bg-red-700 text-white font-lato font-bold py-4 px-8 text-lg rounded-lg transition duration-300 flex items-center shadow-2xl"
+                        >
+                            Contacta un Asesor
+                        </MagnetButton>
                     </div>
-                </h2>
 
-                {/* Subtexto */}
-                <p className="text-xl mb-12 max-w-3xl mx-auto opacity-90">
-                    Accede a tu itinerario digital 24/7 desde tu móvil. ¿Dudas o imprevistos? Tienes una línea directa con tu agente de viajes personal por WhatsApp o teléfono durante todo tu recorrido.
-                </p>
-                
-                {/* Botón CTA (Rojo brillante) */}
-                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 text-lg rounded-lg transition duration-300 flex items-center shadow-lg mx-auto">
-                    Contacta un Asesor →
-                </button>
+                    {/* COLUMNA DERECHA: Imagen del Mockup (El itinerario digital) */}
+                    <div className='flex justify-center lg:justify-end'>
+                        {/* 🛑 CAMBIO CLAVE AQUÍ: Aumentamos el max-w y damos una altura explícita 🛑 */}
+                        <div className='relative w-full max-w-xl lg:max-w-2xl h-[450px] lg:h-[550px]'> 
+                            {/* Imagen del Mockup (Ajustada y centrada) */}
+                            <img 
+                                src={MOCKUP} 
+                                alt="Mockup de itinerario digital en móvil" 
+                                // Usamos w-full h-full para forzar a la imagen a ocupar el espacio del div padre
+                                className="w-full h-full bg-white object-contain shadow-2xl rounded-2xl" 
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 

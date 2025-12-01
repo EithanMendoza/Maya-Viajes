@@ -13,7 +13,7 @@ const HeroSection = () => {
 
     return (
         // CONTENEDOR PRINCIPAL: Usamos min-h-screen para mejor compatibilidad con dispositivos móviles.
-        <div className="min-h-screen w-full relative overflow-hidden"> 
+        <div className="min-h-screen h-screen w-full relative overflow-hidden"> 
             
             {/* 1. VIDEO DE FONDO (Capa z-0) */}
             <video 
@@ -29,7 +29,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gray-900 opacity-25 z-10"></div>
             
             {/* 3. CONTENIDO PRINCIPAL (Capa z-20) - SOLUCIÓN: Agregamos relative */}
-            <div className="text-white font-lato max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 grid grid-cols-1 lg:grid-cols-2 items-center h-full relative mt-8"> 
+            <div className="text-white font-lato max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 grid grid-cols-1 lg:grid-cols-2 items-center h-full relative"> 
                 {/* 🛑 CORRECCIÓN: Eliminamos mt-16 porque el Navbar ya compensa, y quitamos pt-5 y text-2xl/font-bold del h1 */}
 
                 {/* COLUMNA IZQUIERDA: Texto y Botón CTA */}

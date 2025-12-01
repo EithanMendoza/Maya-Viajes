@@ -1,9 +1,8 @@
-// src/components/Footer.jsx
 import React from 'react';
-// Iconos para redes sociales y idioma
+import logo from '../assets/LOGO_CHIDO_BLANCO-02.svg'
+// Iconos
 import { FiGlobe, FiFacebook, FiTwitter, FiLinkedin } from 'react-icons/fi'; 
 
-// Datos para las columnas de enlaces
 const footerLinks = [
     {
         title: "Nuestros Viajes",
@@ -21,34 +20,54 @@ const footerLinks = [
 
 const Footer = () => {
     return (
-        // Contenedor principal: Fondo rojo oscuro, ancho completo
-        <footer className="bg-red-900 text-white pt-16 relative w-full">
+        // 🛑 CORRECCIÓN 1: Aplicamos 'font-lato' al contenedor principal.
+        <footer className="bg-red-900 text-white w-full font-lato">
             
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* --- SVG ONDULADO SUPERIOR (Encabezado) --- */}
+            {/* 🛑 CORRECCIÓN 2: Eliminamos la clase vacía y nos aseguramos de que no haya padding/margin extra. */}
+            <div className="w-full overflow-hidden leading-[0]">
+                <svg 
+                    className="block w-[calc(100%+1.3px)] h-[100px] md:h-[150px]" 
+                    data-name="Layer 1" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 1200 120" 
+                    preserveAspectRatio="none"
+                >
+                    <path 
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                        // 🛑 CORRECCIÓN 3: El relleno debe ser el color de la sección de ARRIBA (bg-red-800)
+                        className="fill-red-800" 
+                    ></path>
+                </svg>
+            </div>
+
+
+            {/* --- CONTENIDO DEL FOOTER --- */}
+            {/* Añadimos el padding-top (pt-20) aquí, ya que el SVG es parte del flujo normal. */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
                 
-                {/* SECCIÓN SUPERIOR: Logo y Columnas de Navegación */}
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12">
+                {/* SECCIÓN SUPERIOR */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12">
                     
-                    {/* COLUMNA 1: Logo y Descripción */}
-                    <div className="col-span-2 md:col-span-1">
+                    {/* COLUMNA 1: Logo */}
+                    <div className="col-span-1 md:col-span-2 lg:col-span-1">
                         <div className="flex items-center mb-4">
-                            {/* Placeholder para Logo de Viajes MAYA */}
-                            <div className="w-8 h-8 rounded-full bg-yellow-400 mr-2"></div> 
-                            <span className="text-xl font-bold">Viajes MAYA</span>
+                            <img src={logo} alt="VIAJES MAYA Logo" className="h-40 w-auto mr-3" />
                         </div>
-                        <p className="text-sm text-gray-400 max-w-[250px]">
+                        <p className="text-sm text-gray-300 max-w-[250px] leading-relaxed">
                             Creamos experiencias de viaje inolvidables y personalizadas al corazón del Mundo Maya.
                         </p>
                     </div>
 
-                    {/* COLUMNAS 2-4: Enlaces de Navegación */}
+                    {/* COLUMNAS 2-4: Links */}
                     {footerLinks.map((col, colIndex) => (
                         <div key={colIndex} className="col-span-1">
-                            <h4 className="text-lg font-semibold mb-4 text-white">{col.title}</h4>
+                            {/* Eliminamos font-playfair de los títulos de columna */}
+                            <h4 className="text-lg font-semibold mb-4 text-yellow-400">{col.title}</h4>
                             <ul className="space-y-2">
                                 {col.links.map((link, linkIndex) => (
                                     <li key={linkIndex}>
-                                        <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors duration-150">
+                                        <a href="#" className="text-sm text-gray-300 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">
                                             {link}
                                         </a>
                                     </li>
@@ -57,43 +76,40 @@ const Footer = () => {
                         </div>
                     ))}
                     
-                    {/* COLUMNA 5: CTA Final del Footer */}
-                    <div className="col-span-2 md:col-span-1">
-                        <h4 className="text-xl font-bold mb-4">Inicia tu Aventura</h4>
-                        <p className="text-sm text-gray-400 mb-6">
-                            Dinos qué sueñas con conocer y te enviaremos un plan personalizado sin costo
+                    {/* COLUMNA 5: CTA */}
+                    <div className="col-span-1 md:col-span-2 lg:col-span-1">
+                        {/* Eliminamos font-playfair */}
+                        <h4 className="text-xl font-bold mb-4 text-white">Inicia tu Aventura</h4>
+                        <p className="text-sm text-gray-300 mb-6">
+                            ¿Listo para Uxmal? Te enviamos un plan personalizado hoy mismo.
                         </p>
-                        <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center shadow-md">
-                            Cotizar Ahora →
+                        <button className="bg-red-700 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center shadow-lg w-full justify-center lg:w-auto">
+                            Cotizar Ahora
                         </button>
                     </div>
                 </div>
 
                 {/* DIVISOR */}
-                <div className="border-t border-red-700 my-8"></div>
+                <div className="border-t border-red-800/50 my-8"></div>
 
                 {/* SECCIÓN INFERIOR: Legal y Redes Sociales */}
-                <div className="flex flex-col md:flex-row justify-between items-center py-6 text-sm text-gray-400">
-                    
-                    {/* Legal y Links Inferiores */}
-                    <div className="flex flex-wrap space-x-4 md:space-x-6 items-center mb-4 md:mb-0">
-                        <div className="flex items-center">
-                            <FiGlobe className="mr-1" />
+                <div className="flex flex-col md:flex-row justify-between items-center py-6 text-sm text-gray-400 pb-12">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mb-4 md:mb-0">
+                        <div className="flex items-center text-gray-300">
+                            <FiGlobe className="mr-1" size={20} />
                             <span>Español</span>
                         </div>
-                        <a href="#" className="hover:text-white">Términos y condiciones</a>
-                        <a href="#" className="hover:text-white">Políticas de privacidad</a>
-                        <span className="mt-2 md:mt-0">©2025 VIAJES MAYA</span>
+                        <a href="#" className="hover:text-white transition-colors">Términos</a>
+                        <a href="#" className="hover:text-white transition-colors">Privacidad</a>
+                        <span className="opacity-60">©2025 VIAJES MAYA</span>
                     </div>
 
-                    {/* Redes Sociales */}
-                    <div className="flex space-x-4">
-                        <a href="#" aria-label="Facebook" className="hover:text-white transition-colors duration-150"><FiFacebook className="w-5 h-5" /></a>
-                        <a href="#" aria-label="Twitter" className="hover:text-white transition-colors duration-150"><FiTwitter className="w-5 h-5" /></a>
-                        <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors duration-150"><FiLinkedin className="w-5 h-5" /></a>
+                    <div className="flex space-x-6">
+                        <a href="#" className="hover:text-white hover:scale-110 transition-all"><FiFacebook size={20} /></a>
+                        <a href="#" className="hover:text-white hover:scale-110 transition-all"><FiTwitter size={20} /></a>
+                        <a href="#" className="hover:text-white hover:scale-110 transition-all"><FiLinkedin size={20} /></a>
                     </div>
                 </div>
-                
             </div>
         </footer>
     );
