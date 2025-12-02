@@ -4,7 +4,6 @@ import Stack from '../../../components/Stack/Stack'
 import ScrollFloat from '../../../components/ScrollFloat/ScrollFloat';
 import MagnetButton from '../../../components/MagnetButton';
 //imagenes
-import JAGUAR_PLACEHOLDER from '../../../assets/images/mascota.png'; 
 import CENOTE_IMAGE from '../../../assets/images/lugares/cenote.jpg';
 import CHICHENITZA_IMAGE from '../../../assets/images/lugares/chichenItza.jpg';
 import IZAMAL_IMAGE from '../../../assets/images/lugares/izamal.jpg';

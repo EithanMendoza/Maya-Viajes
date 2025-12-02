@@ -12,7 +12,7 @@ const AssuranceCTA = () => {
 
     return (
         // Contenedor principal: Fondo rojo oscuro similar al Hero, padding vertical generoso
-        <section className="bg-red-800 text-white py-24 md:py-32 relative overflow-hidden w-full">
+        <section className="bg-white text-black py-24 md:py-32 relative overflow-hidden w-full">
             
             {/* Contenido centrado dentro de max-w-7xl */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
@@ -29,7 +29,7 @@ const AssuranceCTA = () => {
                         </h2>
                         
                         {/* Subtexto: Alto contraste y profesional */}
-                        <p className="text-xl max-w-lg font-lato text-gray-200">
+                        <p className="text-xl max-w-lg font-lato text-black">
                             Accede a tu itinerario digital 24/7 desde tu móvil. ¿Dudas o imprevistos? Tienes una línea directa con tu agente de viajes personal por WhatsApp o teléfono durante todo tu recorrido.
                         </p>
                         
@@ -53,7 +53,7 @@ const AssuranceCTA = () => {
                                 src={MOCKUP} 
                                 alt="Mockup de itinerario digital en móvil" 
                                 // Usamos w-full h-full para forzar a la imagen a ocupar el espacio del div padre
-                                className="w-full h-full bg-white object-contain shadow-2xl rounded-2xl" 
+                                className="w-full h-full bg-white rounded-2xl" 
                             />
                         </div>
                     </div>
